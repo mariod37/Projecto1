@@ -1,0 +1,239 @@
+:root {
+    --blanco: #ffffff;
+    --oscuro: #212121;
+    --primario: #ffc187;
+    --secundario:rgba(0, 204, 255, 0.767);
+    --gris:#78849b;
+}/*esto es custom property*/
+
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;/*este codigo junto con este }
+    *, *:before, *:after {
+        box-sizing: inherit;
+      } permite mantener el tamaño que queremos*/
+      scroll-snap-type: y mandatory;/*permite hacer scroll de arriba hacia abajo*/
+}
+.servicios, .navegacion-principal,.formulario{
+    scroll-snap-align:center;
+    scroll-snap-stop:always ;
+   }
+*, *:before, *:after {
+    box-sizing: inherit;
+  }
+body {
+    font-size: 16px;/*1 rem = 10 px*/
+    font-family: 'Bodoni Moda', serif;
+    font-family: 'Noto Serif SC', serif;/*usando google fonts*/
+    background-image: linear-gradient(to top,#def9f3 0%, var(--blanco 100%));/*esta linea hace un degradado del color de fondo*/
+}
+/* con estos dos font-size (html y body) nos permite utilizar la medida rem adecuadamente
+un rem es igual a 10 px. usando la medidad rem con el codigo asigando al parentesis nuestro sitio se adaptara mejor a distintas pantallas*/
+.contenedor{
+    max-width: 120rem;
+    margin: 0 auto;
+    
+}
+.contenedor h2{
+    text-align: center;
+}
+.titulo {
+    text-align: center;
+    font-size: 3.8rem;
+    background-color: #7575757c;
+    
+}
+.titulo span {
+    font-size:2rem;
+}
+
+/*navegacion principal*/
+.nav-bg{
+    background-color: rgb(45, 99, 160);
+}
+.navegacion-principal{
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+@media (min-width: 480px){
+    /*resolucion adaptable a telefono*/
+}
+@media (min-width: 768px)/*tablet*/{
+.navegacion-principal{
+    flex-direction: row;
+    justify-content: space-between;
+    }
+}
+
+.navegacion-principal a {
+   
+    color: var(--blanco);
+    text-decoration: none;
+    font-size: 2rem;
+    font-weight: 700;
+    padding: 1rem; 
+}
+.navegacion-principal a:hover{
+    background-color: var(--primario);
+    color: var(--oscuro);
+}
+/*hero y contenido hero*/
+.hero{         
+    background-image: url(/img/imagen_desarrollador.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 450px;
+    position: relative;
+    margin-bottom: 2rem;
+}
+.contenido-hero{
+   position: absolute;
+   background-color: rgba(0, 0, 0, 0.267);/*modo de transparencia anterior*/
+/*background-color: rgb(0 0 0 / 50%); modo de dar transparencia nuevo*/
+   width: 100%;
+   height:100%;
+   display: flex;
+   flex-direction: column;/*estas cuatro lineas de codigo permiten alinear vertical y horizontalmente, osea centrar el div*/
+   align-items: center;
+   justify-content: center;
+   color: var(--primario); 
+}
+
+/*boton*/
+.contacto{
+    color: var(--blanco);
+    padding: 1rem 3rem;
+    margin-top: 1rem;
+    font-size: 2rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    background-color: #78849b7e;
+    border-radius: .5rem;
+    width: 90%;
+    text-align: center;
+    font-weight: bold;
+    }
+    
+    @media (min-width: 760px){
+        .contacto{
+            width: auto;
+        }
+    }
+.sombra{
+    -webkit-box-shadow: 11px -10px 10px -4px rgba(0,0,0,0.42);
+    -moz-box-shadow: 11px -10px 10px -4px rgba(0,0,0,0.42);
+    box-shadow: 11px -10px 10px -4px rgba(0,0,0,0.42); 
+    padding: 2rem;/*pading marca espacio del elemento aplicado en todas las direcciones*/
+    border-radius: 1rem;
+    }
+    
+    /*sericios*/
+    @media(min-width:768px){
+    .servicios{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);/*esto divide la caja contenedora de servicios en tres y significa lo mismo que esto> 33.3% 33.3% 33.3%;*/
+        column-gap: 1rem;
+        
+       }
+   }  
+   .servicio{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+   }
+   
+   .servicio h3{
+    color: var(--secundario);
+    font-weight: 400;
+
+   }
+   .servicio p{
+    line-height: 2;
+    text-align: center;
+   }
+   .servicio .iconos{
+       height: 15rem;
+       width: 15rem;
+       background-color: rgb(183, 199, 147);
+       border-radius: 50%;/*en un cuadrado con este codigo se hace un circulo exacto*/ 
+       display: flex;/*con estas tres lineas centramos el icono*/
+       justify-content: center;
+       align-items: center;
+   }
+   .formulario h2{
+    text-align: center;
+   }
+   .formulario{
+     background-color: #78849b;
+     width: min(60rem, 100%);/*utiliza el valor mas pequeño*/
+     margin: 0 auto;
+     padding: 2rem;
+     border-radius: 1rem;
+
+   }
+   .formulario fieldset{
+    border: none;
+   }
+   .formulario legend{
+    text-align: center;
+    font-size: 1.8rem;
+    font: weight 700px; ;
+    text-transform: uppercase;
+    color: rgb(27, 62, 138);
+   }
+   @media(min-width:768px){
+   .contenedor-campos{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: auto auto 20rem;
+    column-gap: 1rem;
+   }
+}
+.campo:nth-child(3),
+.campo:nth-child(4)
+{
+    grid-column: 1 / 3;
+   }
+
+   .campo{
+       margin-bottom: 1rem;
+}
+  
+   .campo label{
+    color: var(--blanco);
+    font-weight: bold;
+    
+    display: block;
+   }
+   .input-text{
+     width: 100%;
+     border: none;
+     padding: 1.5rem;
+     border-radius: .5rem;
+   }
+   .campo textarea{
+    height: 15rem;
+   }
+   @media(min-width:768px){
+  .enviar{
+     margin: 2.5rem;
+    color: var(--blanco);
+    padding: 1rem 3rem;
+    font-size: 2rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    background-color: #94744556;
+    border-radius: .5rem;
+    width: 90%
+    
+    }
+  }
+   .enviar:hover{
+    cursor: pointer;
+   }
+   .footer{
+    text-align: center;
+   }
+   

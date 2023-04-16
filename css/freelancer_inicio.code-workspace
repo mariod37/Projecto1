@@ -1,0 +1,16 @@
+{
+	"folders": [
+		{
+			"path": "../../codigo con juan/freelancer_inicio"
+		},
+		{
+			"path": "../../codigo con juan/freelancer_fin"
+		},
+		{
+			"path": ".."
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "freelancer_inicio"
+	}
+}
